@@ -1,22 +1,23 @@
 #include <iostream>
 #include <array>
 
+//Define a struct
+struct Point2D{
+    double x;
+    double y;
+};
+
 int main()
 {
-    std::array<int,8> numbers={6,5,3,1,8,7,2,4};
-    for(int j=8;j>0;j--){
-        for(int i=0; i<8; i++){
-            if(numbers[i]>numbers[i+1]){
-                int left=numbers[i];
-                numbers[i]=numbers[i+1];
-                numbers[i+1]=left;
-            }
-        }
-    }
+    //Declare a variable with our struct
+    Point2D mypoint;
 
-    for(int i=0; i<8; i++){
-        std::cout<<numbers[i]<<','<<std::endl;
-    }
+    mypoint.x=3.3;
+    mypoint.y=5.5;
+
+    //Print its contents
+    std::cout<<"Value of X: "<<mypoint.x<<std::endl;
+    std::cout<<"Value of Y: "<<mypoint.y<<std::endl;
 
     return 0;
 }
