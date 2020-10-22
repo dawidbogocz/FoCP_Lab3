@@ -6,6 +6,10 @@
 struct Point2D{
     double x;
     double y;
+
+    void print(){
+        std::cout<<"("<<x<<", "<<y<<")"<<std::endl;
+    }
 };
 
 Point2D create_point(){
@@ -55,9 +59,15 @@ int main()
         }
     }
 
-    std::cout<< "The largest distance is: "<<largest_area<<std::endl;
-    std::cout<< "First point: "<<first.x<<", "<<first.y<<std::endl;
-    std::cout<< "Second point: "<<second.x<<", "<<second.y<<std::endl;
-    std::cout<< "Third point: "<<third.x<<", "<<third.y<<std::endl;
+    std::cout<< "The largest area is: "<<largest_area<<std::endl;
+    std::cout<< "First point: ";
+    first.print();
+
+    std::cout<< "Second point: ";
+    second.print();
+
+    std::cout<< "Third point: ";
+    third.print();
+
     return 0;
 }
