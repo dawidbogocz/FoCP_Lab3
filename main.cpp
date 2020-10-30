@@ -1,4 +1,4 @@
-#include <iostream>
+ #include <iostream>
 #include <vector>
 #include <array>
 
@@ -14,6 +14,20 @@ struct Matrix2D {
                 }
             }
         }else {
+            std::cout << "Dimensions must match!" << std::endl;
+        }
+    }
+
+    void multiply(Matrix2D other) {
+        if (other.rows() == rows() && other.columns() == columns()) {
+
+            for (int i = 0; i < rows(); i++) {
+                for (int j = 0; j < columns(); j++) {
+                    contents[i][j] *= other.contents[i][j];
+                }
+            }
+        }
+        else {
             std::cout << "Dimensions must match!" << std::endl;
         }
     }
@@ -78,8 +92,12 @@ int main()
     std::cout<<"Print matrix b: "<<std::endl;
     b.print();
 
-    std::cout<<"Adding b to a: "<<std::endl;
+    /*std::cout<<"Adding b to a: "<<std::endl;
     a.add(b);
+    a.print();*/
+
+    std::cout << "Multiplying a by b: " << std::endl;
+    a.multiply(b);
     a.print();
 
     return 0;
